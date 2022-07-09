@@ -14,8 +14,7 @@ function wrap (action, timeout) {
 				}, timeout)
 			}
 		}catch (error) {
-			error.status = error.status || 500
-			next(createError(error.status, error.message))
+			next()
 		}
 	}
 }
@@ -58,7 +57,7 @@ exports.default = class ExpressDispatcher extends RouterDispatcher {
 			next(createError(404))
         })
         this._express.use(async (err, req, res, next) => {
-            res.status(err.status)
+			err.status = err.status || 500
             this.errorHandler(err, req, res, next)
         })
 	}
