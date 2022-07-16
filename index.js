@@ -14,7 +14,7 @@ function wrap (action, timeout) {
 				}, timeout)
 			}
 		}catch (error) {
-			next()
+			next(error)
 		}
 	}
 }

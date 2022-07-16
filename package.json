@@ -1,6 +1,6 @@
 {
   "name": "haluka-express",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Routing Dispatcher for Haluka (using express)",
   "main": "index.js",
   "scripts": {
